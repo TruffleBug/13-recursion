@@ -11,6 +11,8 @@ function fibs(num) {
 }
 
 function fibsRec(goalLength, currentNum = 2, sequence = [0,1]) {
+	console.log("This was printed recursively");
+
 	if (goalLength <= 0) return undefined;
 	if (goalLength === 1) return [0];
 	if (goalLength === 2) return [0, 1];
@@ -22,6 +24,6 @@ function fibsRec(goalLength, currentNum = 2, sequence = [0,1]) {
 	return sequence;
 }
 
-let testNum = 17;
+let testNum = 8;
 console.log("fibs", fibs(testNum));
 console.log("fibsRec", fibsRec(testNum));
