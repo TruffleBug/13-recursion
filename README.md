@@ -1,2 +1,2 @@
-# 13-recursion-fibonacci
+# 13-recursion
 https://www.theodinproject.com/lessons/javascript-recursion
