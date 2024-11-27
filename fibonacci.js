@@ -10,16 +10,16 @@ function fibs(num) {
 	return sequence;
 }
 
-function fibsRec(goalLength, currentNum = 2, sequence = [0,1]) {
+function fibsRec(goalLength, currentIndex = 2, sequence = [0,1]) {
 	console.log("This was printed recursively");
 
 	if (goalLength <= 0) return undefined;
 	if (goalLength === 1) return [0];
 	if (goalLength === 2) return [0, 1];
 
-	if (currentNum < goalLength) {
-        let nextValueInSequence = sequence[currentNum - 2] + sequence[currentNum - 1];
-		return fibsRec(goalLength, currentNum + 1, sequence.concat(nextValueInSequence));
+	if (currentIndex < goalLength) {
+        let nextValueInSequence = sequence[currentIndex - 2] + sequence[currentIndex - 1];
+		return fibsRec(goalLength, currentIndex + 1, sequence.concat(nextValueInSequence));
 	}
 	return sequence;
 }
