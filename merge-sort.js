@@ -4,21 +4,21 @@ function mergeSort(array) {
 	if (array.length === 0) {
 		return undefined;
 	} else if (array.length === 1) {
-		return array
+		return array;
 	} else if (array.length > 1) {
-		left = array.splice(0, Math.round(array.length / 2));	
+		left = array.splice(0, Math.round(array.length / 2));
 		right = array;
 
-		console.log('1', "L:", left, ", R:", right);
+		// console.log("1", "L:", left, ", R:", right);
 
-		 left = mergeSort(left)
-		 right = mergeSort(right)
+		left = mergeSort(left);
+		right = mergeSort(right);
 
-		console.log('2', "L:", left, ", R:", right);
-	
+		// console.log("2", "L:", left, ", R:", right);
+
 		let sortedArray = [];
-		
-		while(left.length || right.length) {
+
+		while (left.length || right.length) {
 			// console.log('3', "L:", left, ", R:", right);
 			if (!left.length) {
 				sortedArray = sortedArray.concat(right);
@@ -30,16 +30,14 @@ function mergeSort(array) {
 				sortedArray.push(left.shift());
 			} else {
 				sortedArray.push(right.shift());
-			};
-		};
-	
+			}
+		}
+
 		// console.log('sortedArray', sortedArray)
 		return sortedArray;
-	};
+	}
+}
 
-};
-
-
-// console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
-// console.log(mergeSort([105, 79, 100, 110]));
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
+console.log(mergeSort([105, 79, 100, 110]));
 console.log(mergeSort([3, 6, 4, 1, 2, 5, 0]));
